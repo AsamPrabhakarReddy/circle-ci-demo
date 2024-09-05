@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:18  # You can change this based on your stack
+      - image: circleci/node:14  # You can change this based on your stack
     steps:
       - checkout
       - run:
@@ -18,7 +18,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - dist  # Assuming the build artifacts are in the 'dist' directory
+            - build  # Assuming the build artifacts are in the 'dist' directory
 
   deploy_s3:
     docker:
